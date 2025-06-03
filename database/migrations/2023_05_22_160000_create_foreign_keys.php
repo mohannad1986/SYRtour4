@@ -13,24 +13,38 @@ class CreateForeignKeys extends Migration {
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
-		Schema::table('facilits', function(Blueprint $table) {
+		// Schema::table('facilits', function(Blueprint $table) {
 
-			if (Schema::hasColumn('facilits', 'owner_id')) {
-			$table->foreign('town_id')->references('id')->on('towns')
-						->onDelete('cascade')
-						->onUpdate('cascade');
-			}
-		});
-		Schema::table('facilits', function(Blueprint $table) {
-			$table->foreign('owner_id')->references('id')->on('owners')
-						->onDelete('cascade')
-						->onUpdate('cascade');
-		});
-		Schema::table('facilits', function(Blueprint $table) {
-			$table->foreign('category_id')->references('id')->on('categories')
-						->onDelete('cascade')
-						->onUpdate('cascade');
-		});
+		// 	if (Schema::hasColumn('facilits', 'owner_id')) {
+		// 	$table->foreign('town_id')->references('id')->on('towns')
+		// 				->onDelete('cascade')
+		// 				->onUpdate('cascade');
+		// 	}
+		// });
+		// Schema::table('facilits', function(Blueprint $table) {
+		// 	$table->foreign('owner_id')->references('id')->on('owners')
+		// 				->onDelete('cascade')
+		// 				->onUpdate('cascade');
+		// });
+		// Schema::table('facilits', function(Blueprint $table) {
+		// 	$table->foreign('category_id')->references('id')->on('categories')
+		// 				->onDelete('cascade')
+		// 				->onUpdate('cascade');
+		// });
+
+
+        Schema::table('facilits', function(Blueprint $table) {
+                     $table->foreign('town_id')->references('id')->on('towns')
+                    ->onDelete('cascade')->onUpdate('cascade');
+
+                       $table->foreign('owner_id')->references('id')->on('owners')
+                          ->onDelete('cascade')->onUpdate('cascade');
+
+                           $table->foreign('category_id')->references('id')->on('categories')
+                               ->onDelete('cascade')->onUpdate('cascade');
+           });
+
+
 		Schema::table('cits_categors', function(Blueprint $table) {
 			$table->foreign('city_id')->references('id')->on('citys')
 						->onDelete('restrict')
