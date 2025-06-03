@@ -13,8 +13,8 @@ class CreateFacilitsTable extends Migration {
 			$table->softDeletes();
 			$table->string('name');
 			$table->integer('town_id')->unsigned();
-			$table->integer('owner_id')->unsigned()->nullable()->change();;
-			// $table->integer('owner_id')->unsigned()->nullable();
+			// $table->integer('owner_id')->unsigned()->nullable()->change();;
+			$table->integer('owner_id')->unsigned()->nullable();
 			$table->integer('category_id')->unsigned();
 		});
 	}
