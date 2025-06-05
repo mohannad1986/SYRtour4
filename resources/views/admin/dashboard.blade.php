@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="float-right text-right">
                                     {{-- <p class="card-text text-dark">Followers</p> --}}
-                                    <h4>{{ App\Models\tourist::count(); }}</h4>
+                                    <h4>{{ App\Models\Tourist::count(); }}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
