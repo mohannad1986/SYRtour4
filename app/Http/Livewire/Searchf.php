@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\models\Facility;
+use App\Models\Facility;
 use App\models\Owner;
 use Spatie\Translatable\HasTranslations;
 
